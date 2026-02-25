@@ -5,7 +5,13 @@ export GOTELEMETRY = off
 %:
 	dh $@
 
+override_dh_auto_build:
+	make client
+
+override_dh_auto_install:
+	install -D -m 0755 bin/irgsh-cli debian/irgsh-cli/usr/bin/irgsh-cli
+
 override_dh_auto_clean:
-	dh_auto_clean
+	rm -rf bin/
 	rm -rf debian/.debhelper debian/irgsh-cli
 	rm -f debian/debhelper-build-stamp debian/files debian/*.substvars
