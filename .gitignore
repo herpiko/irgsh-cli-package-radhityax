@@ -1,3 +1,5 @@
+irgsh-cli
+bin/
 debian/.debhelper/
 debian/irgsh-cli/
 debian/debhelper-build-stamp
